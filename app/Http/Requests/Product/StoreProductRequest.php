@@ -8,7 +8,8 @@ class StoreProductRequest extends FormRequest
 {
     public function rules() {
         return [
-
+            'name',
+            'description',
         ];
     }
 }

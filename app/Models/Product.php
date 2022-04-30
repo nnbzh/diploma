@@ -11,6 +11,12 @@ class Product extends Model
     use Imageable, HasFilters;
 
     protected $fillable = [
-        'name'
+        'name',
+        'user_id',
+        'description'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
