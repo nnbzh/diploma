@@ -2,19 +2,29 @@
 
 namespace App\Services;
 
+use App\Repositories\ImageRepository;
 use App\Repositories\ProductRepository;
 
 class ProductService
 {
     protected ProductRepository $productRepo;
+    protected ImageRepository $imageRepo;
 
-    public function __construct(ProductRepository $productRepo)
+    public function __construct(
+        ProductRepository $productRepo,
+        ImageRepository $imageRepo
+    )
     {
         $this->productRepo = $productRepo;
+        $this->imageRepo = $imageRepo;
     }
 
     public function create($data) {
-        return $this->productRepo->create($data);
+        $images   = $data['images'] ?? [];
+        $product  = $this->productRepo->create($data);
+        $this->imageRepo->createForImageable($product, $images);
+
+        return $product;
     }
 
     public function list($filters = []) {

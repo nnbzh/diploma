@@ -32,7 +32,7 @@ class Image extends Model
         'location'
     ];
 
-    public function getLocationAttribute(): ?string
+    public function getUrlAttribute(): ?string
     {
         if (is_null($this->location)) {
             return null;
@@ -42,10 +42,6 @@ class Image extends Model
             return $this->location;
         }
 
-        return public_path()."/$this->location";
-    }
-
-    public function setLocationAttribute($image) {
-
+        return config('filesystems.disks.public.url')."/$this->location";
     }
 }

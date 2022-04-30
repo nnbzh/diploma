@@ -8,8 +8,10 @@ class StoreProductRequest extends FormRequest
 {
     public function rules() {
         return [
-            'name',
-            'description',
+            'name'          => 'required',
+            'description'   => 'required',
+            'images'        => 'nullable|array',
+            'images.*'      => 'nullable|file',
         ];
     }
 }
