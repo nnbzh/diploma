@@ -32,7 +32,8 @@ class Image extends Model
         'location'
     ];
 
-    public function getLocationAttribute() {
+    public function getLocationAttribute(): ?string
+    {
         if (is_null($this->location)) {
             return null;
         }
@@ -41,6 +42,10 @@ class Image extends Model
             return $this->location;
         }
 
-        return config('filesystems.disks.s3.endpoint')."/europharm2$this->location";
+        return public_path()."/$this->location";
+    }
+
+    public function setLocationAttribute($image) {
+
     }
 }
