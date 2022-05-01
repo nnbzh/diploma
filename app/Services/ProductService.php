@@ -20,9 +20,9 @@ class ProductService
     }
 
     public function create($data) {
-        $images   = $data['images'] ?? [];
+//        $images   = $data['images'] ?? [];
         $product  = $this->productRepo->create($data);
-        $this->imageRepo->createForImageable($product, $images);
+//        $this->imageRepo->createForImageable($product, $images);
 
         return $product;
     }

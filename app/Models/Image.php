@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Traits\Imageable;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -26,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Image extends Model
 {
+    use CrudTrait;
+
     protected $fillable = [
         'imageable_id',
         'imageable_type',

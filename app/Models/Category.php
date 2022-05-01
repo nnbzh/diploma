@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\HasFilters;
 use App\Traits\Imageable;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -30,7 +31,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Category extends Model
 {
-    use HasFilters, Imageable;
+    use HasFilters, Imageable, CrudTrait;
 
     protected $fillable = [
         'name',

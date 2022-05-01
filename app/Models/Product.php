@@ -4,11 +4,12 @@ namespace App\Models;
 
 use App\Traits\HasFilters;
 use App\Traits\Imageable;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use Imageable, HasFilters;
+    use Imageable, HasFilters, CrudTrait;
 
     protected $fillable = [
         'name',
