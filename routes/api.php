@@ -26,5 +26,6 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
 });
 
+
 Route::apiResource('categories', 'CategoryController')->only(['index']);
 Route::apiResource('products', 'ProductController');
