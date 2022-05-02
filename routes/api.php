@@ -27,5 +27,5 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 
-Route::apiResource('categories', 'CategoryController')->only(['index']);
+Route::apiResource('categories', 'CategoryController')->only(['index', 'show']);
 Route::apiResource('products', 'ProductController');
