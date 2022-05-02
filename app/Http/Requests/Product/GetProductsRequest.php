@@ -8,7 +8,7 @@ class GetProductsRequest extends FormRequest
 {
     public function rules() {
         return [
-
+            'category_id' => 'nullable|int|exists:categories,id'
         ];
     }
 }
