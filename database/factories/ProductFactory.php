@@ -22,6 +22,7 @@ class ProductFactory extends Factory
         return [
             'name'          => $this->faker->company,
             'description'   => $this->faker->paragraph,
+            'price'         => $this->faker->randomNumber(),
         ];
     }
 }
